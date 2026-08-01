@@ -3,12 +3,11 @@
         <div class="nav-container">
             <a href="{{ .Site.BaseURL }}" class="logo" aria-label="{{ .Site.Title }} - Home">{{ .Site.Params.logo | default "GP" }}</a>
             <ul class="nav-links" id="nav-menu">
-                <li><a href="{{ .Site.BaseURL }}" aria-current="false">{{ i18n "home" }}</a></li>
-                <li><a href="{{ .Site.BaseURL }}social/" aria-current="false">{{ i18n "social" }}</a></li>
-                <li><a href="{{ .Site.BaseURL }}posts/" aria-current="false">{{ i18n "blog" }}</a></li>
-                <li><a href="{{ .Site.BaseURL }}portfolio/" aria-current="false">{{ i18n "portfolio" }}</a></li>
-                <li><a href="{{ .Site.BaseURL }}about/" aria-current="false">{{ i18n "about" }}</a></li>
-                <li><a href="{{ .Site.BaseURL }}travel/" aria-current="false">{{ i18n "travel" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}" aria-current="false">Accueil</a></li>
+                <li><a href="{{ .Site.BaseURL }}portfolio/" aria-current="false">Projets</a></li>
+                <li><a href="{{ .Site.BaseURL }}posts/" aria-current="false">Articles</a></li>
+                <li><a href="{{ .Site.BaseURL }}parcours/" aria-current="false">Parcours</a></li>
+                <li><a href="{{ .Site.BaseURL }}about/" aria-current="false">À propos</a></li>
             </ul>
             {{ if gt (len .Site.Languages) 1 }}
             <div class="lang-switcher" role="group" aria-label="Language selection">
