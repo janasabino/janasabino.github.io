@@ -1,26 +1,40 @@
 {{ define "main" }}
-<section class="hero">
-    <div class="hero-content">
-        <h1>{{ i18n "hero_greeting" }} {{ .Site.Params.author | default "m03315" }}</h1>
-        <p>{{ .Site.Params.subtitle | default "数字游民 • 科技探索者 • 生活记录者" }}</p>
-        <p>{{ .Site.Params.description | default "分享科技前沿见解，记录数字游民生活，提供实用攻略指南" }}</p>
-        <div class="cta-buttons">
-            <a
-                href="https://www.linkedin.com/in/janasabino/"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer">
-                LinkedIn
-            </a>
 
-            <a
-                href="https://github.com/janasabino"
-                class="btn btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer">
-                GitHub
-            </a>
+<section class="hero">
+    <div class="hero-profile">
+
+        <div class="hero-photo">
+            <img
+                src='{{ "images/janaina.jpg" | relURL }}'
+                alt="Portrait professionnel de Janaina Sabino">
         </div>
+
+        <div class="hero-content">
+            <h1>{{ i18n "hero_greeting" }} {{ .Site.Params.author }}</h1>
+
+            <p>{{ .Site.Params.subtitle }}</p>
+
+            <p>{{ .Site.Params.description }}</p>
+
+            <div class="cta-buttons">
+                <a
+                    href="https://www.linkedin.com/in/janasabino/"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/janasabino"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
 
