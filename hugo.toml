@@ -1,5 +1,5 @@
-baseURL = "https://m03315.github.io/nomad-tech/"
-defaultContentLanguage = "zh"
+baseURL = "https://janasabino.github.io/"
+defaultContentLanguage = "fr"
 theme = "nomad-tech"
 
 [pagination]
