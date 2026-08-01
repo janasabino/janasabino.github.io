@@ -17,10 +17,10 @@ theme = "nomad-tech"
     weight = 1
 
 [params]
-  author = "m03315"
+  author = "Janaina"
   logo = "Janaina Sabino"
-  subtitle = "Digital Nomad • Tech Explorer • Life Recorder"
-  description = "Sharing tech insights, recording nomad life, providing practical guides"
+  subtitle = "Ingénierie pédagogique • Intelligence artificielle"
+  description = "J’accompagne les projets de formation, de l’analyse des besoins à la conception, en mobilisant l’intelligence artificielle au service de la pédagogie."
 
   # Analytics (optional)
   googleAnalytics = "G-2310RJEC91"
