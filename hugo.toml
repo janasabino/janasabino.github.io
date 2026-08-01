@@ -10,18 +10,11 @@ theme = "nomad-tech"
   tag = "tags"
 
 [languages]
-  [languages.zh]
-    languageCode = "zh-CN"
-    title = "Your Name - Digital Nomad | Tech | Life"
-    weight = 1
-  [languages.en]
-    languageCode = "en-US"
-    title = "Your Name - Digital Nomad | Tech Insights | Life Stories"
-    weight = 2
   [languages.fr]
-    languageCode = "fr-FR"
-    title = "Your Name - Nomade Numérique | Tech | Vie"
-    weight = 3
+    locale = "fr-FR"
+    label = "Français"
+    title = "Janaina Sabino"
+    weight = 1
 
 [params]
   author = "m03315"
