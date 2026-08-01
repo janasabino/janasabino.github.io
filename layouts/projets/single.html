@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+{{ $project := . }}
+
+<article class="project-detail-page">
+    <div class="project-detail-container">
+
+        <a href='{{ "projets/" | relURL }}' class="project-back">
+            ← Retour aux projets
+        </a>
+
+        <header class="project-detail-header{{ if .Params.genially_url }} has-featured-embed{{ end }}">
+
+            {{ with .Params.project_type }}
+            <p class="project-detail-type">{{ . }}</p>
+            {{ end }}
+
+            <h1>{{ .Title }}</h1>
+
+            {{ with .Params.description }}
+            <p class="project-detail-description">
+                {{ . }}
+            </p>
+            {{ end }}
+
+            {{ with .Params.tags }}
+            <div class="project-detail-tags">
+                {{ range . }}
+                <span class="category-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ with .Params.tools }}
+            <div class="project-detail-tools">
+                {{ range . }}
+                <span class="project-tool">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+
+        </header>
+
+        {{ if .Params.genially_url }}
+
+        <section class="project-embed project-embed-featured">
+
+            <h2>Découvrir la réalisation</h2>
+
+            <p class="project-embed-intro">
+                Explorez la réalisation interactive, puis découvrez ci-dessous
+                le contexte, les objectifs et la démarche de conception du projet.
+            </p>
+
+            <div class="project-embed-frame">
+                <iframe
+                    src="{{ .Params.genially_url }}"
+                    title="Réalisation interactive — {{ .Title }}"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </section>
+
+        {{ else }}
+
+            {{ with .Params.image }}
+            <div class="project-detail-cover">
+                <img
+                    src="{{ . | relURL }}"
+                    alt="Aperçu du projet {{ $project.Title }}">
+            </div>
+            {{ end }}
+
+        {{ end }}
+
+        <div class="project-detail-content">
+            {{ .Content }}
+        </div>
+
+    </div>
+</article>
+
+{{ end }}

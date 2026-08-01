@@ -1,0 +1,83 @@
+{{ define "main" }}
+
+<div class="projects-page">
+    <div class="projects-container">
+
+        <header class="projects-header">
+            <h1>{{ .Title }}</h1>
+            <div class="projects-introduction">
+                {{ .Content }}
+            </div>
+        </header>
+
+        {{ $projects := .RegularPages.ByWeight }}
+
+        {{ if $projects }}
+
+        <div class="portfolio-grid">
+
+            {{ range $projects }}
+            {{ $project := . }}
+
+            <article class="portfolio-item">
+
+                {{ with .Params.image }}
+                <div class="portfolio-image project-cover">
+                    <img
+                        src="{{ . | relURL }}"
+                        alt="Aperçu du projet {{ $project.Title }}">
+                </div>
+                {{ else }}
+                <div class="portfolio-image">
+                    {{ .Params.project_type | default "Projet" }}
+                </div>
+                {{ end }}
+
+                <div class="portfolio-content">
+
+                    {{ if .Params.image }}
+                        {{ with .Params.project_type }}
+                        <p class="project-type">{{ . }}</p>
+                        {{ end }}
+                    {{ end }}
+
+                    <h2>{{ .Title }}</h2>
+
+                    {{ with .Params.description }}
+                    <p>{{ . }}</p>
+                    {{ end }}
+
+                    {{ with .Params.tags }}
+                    <div class="project-tags">
+                        {{ range . }}
+                        <span class="category-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <div class="project-button">
+                        <a href="{{ .RelPermalink }}" class="btn btn-secondary">
+                            Découvrir le projet
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            {{ end }}
+
+        </div>
+
+        {{ else }}
+
+        <p class="projects-empty">
+            Les projets seront bientôt disponibles.
+        </p>
+
+        {{ end }}
+
+    </div>
+</div>
+
+{{ end }}
