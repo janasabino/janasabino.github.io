@@ -1,0 +1,61 @@
+{{ define "main" }}
+
+{{ $article := . }}
+
+<article class="article-detail-page">
+    <div class="article-detail-container">
+
+        <a href='{{ "posts/" | relURL }}' class="article-back">
+            ← Retour aux articles
+        </a>
+
+        <header class="article-detail-header">
+
+            <time
+                class="article-detail-date"
+                datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2006-01-02" }}
+            </time>
+
+            <h1>{{ .Title }}</h1>
+
+            {{ with .Params.description }}
+            <p class="article-detail-description">
+                {{ . }}
+            </p>
+            {{ end }}
+
+            {{ with .Params.categories }}
+            <div class="article-detail-categories">
+                {{ range . }}
+                <span class="category-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ with .Params.tags }}
+            <div class="article-detail-tags">
+                {{ range . }}
+                <span class="article-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+
+        </header>
+
+        {{ with .Params.image }}
+        <div class="article-detail-cover">
+            <img
+                src="{{ . | relURL }}"
+                alt="Illustration de l’article {{ $article.Title }}">
+        </div>
+        {{ end }}
+
+        <div class="article-detail-content">
+            {{ .Content }}
+        </div>
+
+    </div>
+</article>
+
+{{ end }}

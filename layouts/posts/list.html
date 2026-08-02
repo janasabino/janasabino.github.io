@@ -1,0 +1,92 @@
+{{ define "main" }}
+
+<div class="articles-page">
+    <div class="articles-container">
+
+        <header class="articles-header">
+            <h1>{{ .Title }}</h1>
+
+            {{ with .Content }}
+            <div class="articles-introduction">
+                {{ . }}
+            </div>
+            {{ end }}
+        </header>
+
+        {{ $articles := .RegularPages.ByDate.Reverse }}
+
+        {{ if $articles }}
+
+        <div class="articles-grid">
+
+            {{ range $articles }}
+            {{ $article := . }}
+
+            <article class="article-card">
+
+                {{ with .Params.image }}
+                <div class="article-card-image">
+                    <img
+                        src="{{ . | relURL }}"
+                        alt="Aperçu de l’article {{ $article.Title }}">
+                </div>
+                {{ end }}
+
+                <div class="article-card-content">
+
+                    <time
+                        class="article-card-date"
+                        datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "2006-01-02" }}
+                    </time>
+
+                    <h2>{{ .Title }}</h2>
+
+                    {{ with .Params.description }}
+                    <p class="article-card-description">
+                        {{ . }}
+                    </p>
+                    {{ end }}
+
+                    {{ with .Params.categories }}
+                    <div class="article-card-categories">
+                        {{ range . }}
+                        <span class="category-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    {{ with .Params.tags }}
+                    <div class="article-card-tags">
+                        {{ range . }}
+                        <span class="article-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <a
+                        href="{{ .RelPermalink }}"
+                        class="btn btn-secondary article-card-button">
+                        Lire l’article
+                    </a>
+
+                </div>
+
+            </article>
+
+            {{ end }}
+
+        </div>
+
+        {{ else }}
+
+        <p class="articles-empty">
+            Les articles seront bientôt disponibles.
+        </p>
+
+        {{ end }}
+
+    </div>
+</div>
+
+{{ end }}
