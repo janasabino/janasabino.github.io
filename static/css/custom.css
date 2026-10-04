@@ -1241,3 +1241,42 @@ a[href*="amosglenn.com"]:visited {
 a[href*="amosglenn.com"]:hover {
     color: #20c9ff;
 }
+
+.term-list {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.term-item {
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.term-item:first-child {
+    padding-top: 0;
+}
+
+.term-item:last-child {
+    border-bottom: none;
+}
+
+.term-item h2 {
+    margin: 10px 0 8px;
+}
+
+.term-item h2 a,
+.term-item h2 a:visited {
+    color: #f5f5f7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.term-item h2 a:hover {
+    color: #20c9ff;
+}
+
+.term-item .term-description {
+    margin: 16px 0 20px;
+    line-height: 1.7;
+}
