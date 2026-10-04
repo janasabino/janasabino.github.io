@@ -3,6 +3,8 @@ defaultContentLanguage = "fr"
 theme = "nomad-tech"
 disableKinds = ["rss"]
 
+capitalizeListTitles = false
+
 [pagination]
   pagerSize = 6
 
@@ -20,8 +22,8 @@ disableKinds = ["rss"]
 [params]
   author = "Janaina"
   logo = "Janaina Sabino"
-  subtitle = "Ingénierie pédagogique • Intelligence artificielle"
-  description = "J’accompagne les projets de formation, de l’analyse des besoins à la conception, en mobilisant l’intelligence artificielle au service de la pédagogie."
+  subtitle = "Ingénierie pédagogique • Intelligence artificielle • Qualité & Qualiopi"
+  description = "Je pars des besoins et des difficultés d’apprentissage pour concevoir des solutions pédagogiques adaptées au contexte, aux objectifs et aux réalités du terrain."
 
 
 

@@ -6,6 +6,12 @@
         <header class="articles-header">
             <h1>{{ .Title }}</h1>
 
+            {{ with .Params.description }}
+            <div class="articles-introduction">
+                <p>{{ . }}</p>
+            </div>
+            {{ end }}
+
             {{ with .Content }}
             <div class="articles-introduction">
                 {{ . }}
@@ -13,14 +19,14 @@
             {{ end }}
         </header>
 
-        {{ $articles := .RegularPages.ByDate.Reverse }}
+        {{ $entries := .RegularPages.ByDate.Reverse }}
 
-        {{ if $articles }}
+        {{ if $entries }}
 
         <div class="articles-grid">
 
-            {{ range $articles }}
-            {{ $article := . }}
+            {{ range $entries }}
+            {{ $entry := . }}
 
             <article class="article-card">
 
@@ -28,7 +34,7 @@
                 <div class="article-card-image">
                     <img
                         src="{{ . | relURL }}"
-                        alt="Aperçu de l’article {{ $article.Title }}">
+                        alt="Aperçu de {{ $entry.Title }}">
                 </div>
                 {{ end }}
 
@@ -48,19 +54,21 @@
                     </p>
                     {{ end }}
 
-               {{ with .GetTerms "tags" }}
+                    {{ with .Params.tags }}
                     <div class="article-card-tags">
                         {{ range . }}
-                        <a class="article-tag" href="{{ .RelPermalink }}">
-                            {{ .LinkTitle }}
-                        </a>
+                            <a class="article-tag"
+                            href="{{ (printf "tags/%s/" (. | urlize)) | relLangURL }}">
+                                {{ . }}
+                            </a>
                         {{ end }}
                     </div>
-                {{ end }}
+                    {{ end }}
+
                     <a
                         href="{{ .RelPermalink }}"
                         class="btn btn-secondary article-card-button">
-                        Lire l’article
+                        Découvrir
                     </a>
 
                 </div>
@@ -74,7 +82,7 @@
         {{ else }}
 
         <p class="articles-empty">
-            Les articles seront bientôt disponibles.
+            Le carnet se remplira au fil du temps.
         </p>
 
         {{ end }}

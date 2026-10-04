@@ -9,10 +9,12 @@
             ← Retour aux projets
         </a>
 
-        <header class="project-detail-header{{ if .Params.genially_url }} has-featured-embed{{ end }}">
+        <header class="project-detail-header">
 
             {{ with .Params.project_type }}
-            <p class="project-detail-type">{{ . }}</p>
+            <p class="project-detail-type">
+                {{ . }}
+            </p>
             {{ end }}
 
             <h1>{{ .Title }}</h1>
@@ -23,10 +25,12 @@
             </p>
             {{ end }}
 
-            {{ with .Params.tags }}
+            {{ with .GetTerms "tags" }}
             <div class="project-detail-tags">
                 {{ range . }}
-                <span class="category-tag">{{ . }}</span>
+                <a class="article-tag" href="{{ .RelPermalink }}">
+                    {{ .LinkTitle }}
+                </a>
                 {{ end }}
             </div>
             {{ end }}
@@ -41,38 +45,41 @@
 
         </header>
 
-        {{ if .Params.genially_url }}
+        {{ if ne .Params.show_preview_image false }}
+            {{ with .Params.image }}
+                <div class="project-preview">
 
-        <section class="project-embed project-embed-featured">
+                    <h2>Aperçu du projet</h2>
+
+                    <div class="project-detail-cover">
+                        <img
+                            src="{{ . | relURL }}"
+                            alt="Aperçu du projet {{ $project.Title }}">
+                    </div>
+
+                </div>
+            {{ end }}
+        {{ end }}
+
+        {{ with .Params.genially_url }}
+        <section class="project-embed">
 
             <h2>Découvrir la réalisation</h2>
 
             <p class="project-embed-intro">
-                Explorez la réalisation interactive, puis découvrez ci-dessous
-                le contexte, les objectifs et la démarche de conception du projet.
+                Explorez un aperçu interactif de la réalisation.
             </p>
 
             <div class="project-embed-frame">
                 <iframe
-                    src="{{ .Params.genially_url }}"
-                    title="Réalisation interactive — {{ .Title }}"
+                    src="{{ . }}"
+                    title="Réalisation interactive — {{ $project.Title }}"
                     loading="lazy"
                     allowfullscreen>
                 </iframe>
             </div>
 
         </section>
-
-        {{ else }}
-
-            {{ with .Params.image }}
-            <div class="project-detail-cover">
-                <img
-                    src="{{ . | relURL }}"
-                    alt="Aperçu du projet {{ $project.Title }}">
-            </div>
-            {{ end }}
-
         {{ end }}
 
         <div class="project-detail-content">

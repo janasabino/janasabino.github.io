@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<section class="parcours-page">
+    <div class="parcours-container">
+
+        <header class="parcours-header">
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Params.description }}
+    <p class="parcours-description">{{ . }}</p>
+    {{ end }}
+
+    <div class="parcours-cv">
+        <a
+            href='{{ "cv/janaina-sabino-cv.pdf" | relURL }}'
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer">
+            Télécharger mon CV
+        </a>
+    </div>
+</header>
+
+        <div class="parcours-content">
+            {{ .Content }}
+        </div>
+
+    </div>
+</section>
+
+{{ end }}

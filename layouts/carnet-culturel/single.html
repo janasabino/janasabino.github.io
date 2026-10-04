@@ -5,8 +5,8 @@
 <article class="article-detail-page">
     <div class="article-detail-container">
 
-        <a href='{{ "posts/" | relURL }}' class="article-back">
-            ← Retour aux articles
+        <a href='{{ "carnet-culturel/" | relURL }}' class="article-back">
+            ← Retour au carnet culturel
         </a>
 
         <header class="article-detail-header">
@@ -18,13 +18,6 @@
             </time>
 
             <h1>{{ .Title }}</h1>
-
-            {{ with .Params.description }}
-            <p class="article-detail-description">
-                {{ . }}
-            </p>
-            {{ end }}
-
 
             {{ with .GetTerms "tags" }}
             <div class="article-detail-tags">
@@ -42,7 +35,7 @@
         <div class="article-detail-cover">
             <img
                 src="{{ . | relURL }}"
-                alt="Illustration de l’article {{ $article.Title }}">
+                alt="Illustration de {{ $article.Title }}">
         </div>
         {{ end }}
 

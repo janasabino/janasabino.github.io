@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+<section class="about-page">
+    <div class="about-page-container">
+
+        <header class="about-page-header">
+            <h1>{{ .Title }}</h1>
+
+            {{ with .Params.description }}
+            <p class="about-page-description">
+                {{ . }}
+            </p>
+            {{ end }}
+        </header>
+
+        <div class="about-page-content">
+            {{ .Content }}
+        </div>
+
+        
+<div class="about-contact">
+    <h2>Me contacter</h2>
+
+    <p>
+        Vous souhaitez échanger autour d’un projet, d’une opportunité
+        ou simplement discuter d’ingénierie pédagogique ?
+    </p>
+
+    <div class="about-contact-buttons">
+
+        {{ with .Params.email }}
+        <a href="mailto:{{ . }}" class="btn btn-secondary btn-contact-primary">
+            E-mail
+        </a>
+        {{ end }}
+
+        {{ with .Params.linkedin }}
+        <a href="{{ . }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+        </a>
+        {{ end }}
+
+    </div>
+</div>
+
+    </div>
+</section>
+
+{{ end }}

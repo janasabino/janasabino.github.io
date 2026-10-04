@@ -1,26 +1,19 @@
 ---
-title: "About Me"
-description: "Digital nomad, tech enthusiast, and life explorer"
+title: "À propos"
+description: "Un parcours entre enseignement, intelligence artificielle et ingénierie pédagogique"
+layout: "about"
+email: "janasabino@gmail.com"
+linkedin: "https://www.linkedin.com/in/janasabino/"
 ---
 
-# About Me
+Mon parcours m’a menée de l’enseignement à l’intelligence artificielle — avec une spécialisation en traitement automatique des langues — puis à l’ingénierie pédagogique.
 
-Hi! I'm a digital nomad and tech professional passionate about exploring the world while building amazing digital experiences.
+Ce qui m’intéresse avant tout, c’est de partir d’un besoin ou d’une difficulté d’apprentissage pour concevoir une réponse pédagogique adaptée au contexte, aux objectifs et aux usages.
 
-## My Journey
+Aujourd’hui, j’explore notamment les liens entre pédagogie et intelligence artificielle, sans perdre de vue une question essentielle : **qu’est-ce qui aide réellement à apprendre ?**
 
-Started my nomad journey in 2024, combining my love for technology with wanderlust. I've been exploring different cultures, working with amazing teams remotely, and documenting my experiences along the way.
+Ce portfolio rassemble des projets, des expérimentations et des réflexions qui témoignent de cette démarche. Pour la manière de structurer et de présenter mes projets, je me suis notamment inspirée du portfolio d’[Amos Glenn](https://amosglenn.com/), en particulier de son approche qui part du problème et du besoin avant de mettre l’outil au premier plan.
 
-## What I Do
+## Ce qui guide mon travail
 
-- **Frontend Development**: Building modern, responsive web applications
-- **Content Creation**: Sharing insights about nomad life and tech trends
-- **Community Building**: Connecting with fellow nomads and tech enthusiasts
-
-## Current Focus
-
-Currently based in Bali, working on exciting projects while enjoying the perfect blend of work and surf lifestyle.
-
-## Let's Connect
-
-Feel free to reach out if you want to collaborate, share nomad tips, or just chat about tech and travel!
+**Curiosité, rigueur et attention portée aux apprenants** guident ma manière de travailler. J’aime comprendre avant de concevoir, questionner les choix plutôt que les appliquer par automatisme, et rechercher des solutions à la fois pertinentes, accessibles et adaptées au contexte.

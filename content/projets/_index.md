@@ -1,6 +1,6 @@
 ---
 title: "Projets"
-description: "Une sélection de projets en ingénierie pédagogique, digital learning et intelligence artificielle."
+description: "Des projets qui montrent ma démarche: partir des besoins et des difficultés d’apprentissage pour concevoir des réponses pédagogiques adaptées."
 ---
 
-Découvrez mes projets de conception pédagogique, de micro-learning, de rapid learning, de veille professionnelle et d’expérimentation avec l’intelligence artificielle.
+Chaque projet part d’un besoin, d’une difficulté ou d’une contrainte concrète. J’y présente le problème posé, mon analyse, les choix pédagogiques retenus et la solution conçue - qu’il s’agisse, par exemple, d’un module e-learning, d’un prototype, d’un dispositif de formation, d’une expérimentation avec l’intelligence artificielle ou d’un travail autour de la qualité.

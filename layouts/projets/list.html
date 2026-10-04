@@ -47,13 +47,15 @@
                     <p>{{ . }}</p>
                     {{ end }}
 
-                    {{ with .Params.tags }}
-                    <div class="project-tags">
-                        {{ range . }}
-                        <span class="category-tag">{{ . }}</span>
+                    {{ with .GetTerms "tags" }}
+                        <div class="project-tags">
+                            {{ range . }}
+                            <a class="article-tag" href="{{ .RelPermalink }}">
+                                {{ .LinkTitle }}
+                            </a>
+                            {{ end }}
+                        </div>
                         {{ end }}
-                    </div>
-                    {{ end }}
 
                     <div class="project-button">
                         <a href="{{ .RelPermalink }}" class="btn btn-secondary">

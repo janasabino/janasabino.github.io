@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+<div class="term-page">
+
+    {{ $term := .Data.Term | urlize }}
+        {{ $label := .Data.Term }}
+
+        {{ range .Pages }}
+            {{ range .Params.tags }}
+                {{ if eq (. | urlize) $term }}
+                    {{ $label = . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+    <h1 class="term-title">{{ $label }}</h1>
+
+    <div class="term-grid">
+
+        {{ range .Pages }}
+
+        <article class="term-card">
+
+            {{/* Tipo de conteúdo */}}
+            {{ if in (slice "projects" "projets" "portfolio") .Section }}
+                <span class="term-content-type">Projet</span>
+            {{ else if in (slice "articles" "posts") .Section }}
+                <span class="term-content-type">Article</span>
+            {{ else if eq .Section "carnet-culturel" }}
+                <span class="term-content-type">Carnet culturel</span>
+            {{ else }}
+                <span class="term-content-type">Contenu</span>
+            {{ end }}
+
+            <h2>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            {{/* Data: só aparece se existir uma data válida */}}
+            {{ if gt .Date.Year 1 }}
+                <div class="term-date">
+                    {{ .Date.Format (i18n "date_format") }}
+                </div>
+            {{ end }}
+
+            {{/* Usa a description do front matter antes do Summary */}}
+            {{ with .Params.description }}
+                <p class="term-description">{{ . }}</p>
+            {{ else }}
+                <p class="term-description">{{ .Summary | plainify | truncate 220 }}</p>
+            {{ end }}
+
+            <a href="{{ .RelPermalink }}" class="btn btn-secondary">
+                Découvrir
+            </a>
+
+        </article>
+
+        {{ end }}
+
+    </div>
+
+</div>
+
+{{ end }}
