@@ -10,36 +10,41 @@
 
         <article class="term-card">
 
-            {{/* Tipo de conteúdo */}}
-            {{ if in (slice "projects" "projets" "portfolio") .Section }}
+            {{/* Identifica o tipo de conteúdo */}}
+            {{ if or (eq .Section "projects") (eq .Section "projets") (eq .Section "portfolio") }}
                 <span class="term-content-type">Projet</span>
-            {{ else if in (slice "articles" "posts") .Section }}
+
+            {{ else if or (eq .Section "articles") (eq .Section "posts") }}
                 <span class="term-content-type">Article</span>
+
             {{ else if eq .Section "carnet-culturel" }}
                 <span class="term-content-type">Carnet culturel</span>
+
             {{ else }}
-                <span class="term-content-type">Contenu</span>
+                <span class="term-content-type">{{ .Section | humanize }}</span>
             {{ end }}
 
-            <h2>
+            <h2 class="term-card-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h2>
 
-            {{/* Data: só aparece se existir uma data válida */}}
+            {{/* Não exibe datas inexistentes, evitando "janvier 0001" */}}
             {{ if gt .Date.Year 1 }}
                 <div class="term-date">
-                    {{ .Date.Format (i18n "date_format") }}
+                    {{ time.Format ":date_long" .Date }}
                 </div>
             {{ end }}
 
-            {{/* Usa a description do front matter antes do Summary */}}
+            {{/* Prioriza a description do front matter */}}
             {{ with .Params.description }}
                 <p class="term-description">{{ . }}</p>
             {{ else }}
-                <p class="term-description">{{ .Summary | plainify | truncate 220 }}</p>
+                <p class="term-description">
+                    {{ .Summary | plainify | truncate 220 }}
+                </p>
             {{ end }}
 
-            <a href="{{ .RelPermalink }}" class="btn btn-secondary">
+            <a href="{{ .RelPermalink }}" class="btn btn-secondary term-button">
                 Découvrir
             </a>
 
