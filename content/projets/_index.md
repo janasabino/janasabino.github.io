@@ -1,6 +1,20 @@
 ---
 title: "Projets"
-description: "Des projets qui montrent ma démarche: partir des besoins et des difficultés d’apprentissage pour concevoir des réponses pédagogiques adaptées."
+layout: "hub"
+description: "Découvrez mes projets en ingénierie pédagogique, outils numériques et intelligence artificielle."
+
+cards:
+  - title: "Études de cas"
+    description: "Des projets de formation présentés à travers leur contexte, les besoins identifiés, les choix de conception et les solutions réalisées."
+    url: "/projets/etudes-de-cas/"
+
+  - title: "Outils & ressources"
+    description: "Des outils numériques, prototypes et ressources méthodologiques pour accompagner la conception et la gestion de projets de formation."
+    url: "/projets/outils-ressources/"
+
+  - title: "Labs"
+    description: "Des travaux exploratoires en Learning Analytics, NLP et intelligence artificielle."
+    url: "/projets/labs/"
 ---
 
-Chaque projet part d’un besoin, d’une difficulté ou d’une contrainte concrète. J’y présente le problème posé, mon analyse, les choix pédagogiques retenus et la solution conçue - qu’il s’agisse, par exemple, d’un module e-learning, d’un prototype, d’un dispositif de formation, d’une expérimentation avec l’intelligence artificielle ou d’un travail autour de la qualité.
+Découvrez mes projets en ingénierie pédagogique, outils & ressources et intelligence artificielle.

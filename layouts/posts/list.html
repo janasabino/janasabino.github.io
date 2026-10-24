@@ -13,7 +13,21 @@
             {{ end }}
         </header>
 
-        {{ $articles := .RegularPages.ByDate.Reverse }}
+
+
+        {{ $articles := .RegularPages }}
+
+        {{ with .Params.article_category }}
+            {{ $category := . }}
+            {{ with site.GetPage "/posts" }}
+                {{ $legacy := where .RegularPages "Params.article_category" $category }}
+                {{ $articles = union $articles $legacy }}
+            {{ end }}
+        {{ end }}
+
+        {{ $articles = sort $articles "Weight" "asc" }}
+
+
 
         {{ if $articles }}
 

@@ -10,6 +10,8 @@ tags:
   - Outils pédagogique
   - Padlet
 draft: false
+weight: 10
+article_category: "analyses-reflexions"
 ---
 
 Il y a quelque temps, j’ai eu envie de concevoir une activité pédagogique avec Padlet. J’avais découvert l’outil en 2025, pendant une formation en ingénierie pédagogique, et j’avais envie de l’explorer davantage dans un projet concret. Je suis donc partie de l’outil en cherchant une situation dans laquelle je pourrais l’utiliser.

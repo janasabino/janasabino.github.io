@@ -10,7 +10,19 @@
             </div>
         </header>
 
-        {{ $projects := .RegularPages.ByWeight }}
+
+
+        {{ $projects := .RegularPages }}
+
+        {{ if .Params.show_root_projects }}
+            {{ with site.GetPage "/projets" }}
+                {{ $projects = union $projects .RegularPages }}
+            {{ end }}
+        {{ end }}
+
+        {{ $projects = sort $projects "Weight" "asc" }}
+
+
 
         {{ if $projects }}
 

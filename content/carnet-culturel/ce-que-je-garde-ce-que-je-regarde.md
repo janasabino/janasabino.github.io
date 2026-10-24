@@ -12,6 +12,7 @@ tags:
   - Arts
   - Thé
 draft: false
+weight: 10
 ---
 
 Un espace pour garder trace de ce que je lis, regarde, collectionne et découvre : livres, art, timbres, cartes postales, thé et autres curiosités. Certains de ces détours croisent parfois mes réflexions sur l’apprentissage. D’autres sont simplement là parce qu’ils me plaisent.
